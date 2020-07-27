@@ -26,7 +26,6 @@ const AddTodo = (props) => {
         />
         <input className="btn btn-primary add-item" type="submit" />
       </form>
-      <p>{props.newId} items</p>
     </div>
   );
 };
