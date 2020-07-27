@@ -36,7 +36,7 @@ class Todo extends Component {
             id=""
           />
           <input
-            className="btn btn-danger mr"
+            className="delete btn btn-danger mr"
             type="button"
             value="Delete"
             onClick={this.deleteTodoHandler}

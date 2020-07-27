@@ -4,6 +4,16 @@
   margin: 5% 10%;
   padding: 5px;
 }
-.btn {
+.delete {
   float: right;
+}
+.add-item {
+  margin: 5px auto;
+}
+
+@media (max-width: 500px) {
+  .delete {
+    margin: auto;
+    display: flex;
+  }
 }

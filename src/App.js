@@ -2,34 +2,38 @@ import React, { Component } from "react";
 import "./App.css";
 
 import Todo from "./components/Todo";
+import AddTodo from "./components/AddTodo";
 
 class App extends Component {
   state = {
     todos: [
       {
+        id: 0,
+      },
+      {
         id: 1,
         title: "Sleep",
-        completed: true,
+        completed: false,
       },
       {
         id: 2,
         title: "Work",
-        completed: true,
+        completed: false,
       },
       {
         id: 3,
         title: "Study",
-        completed: true,
+        completed: false,
       },
       {
         id: 4,
         title: "Play",
-        completed: true,
+        completed: false,
       },
       {
         id: 5,
         title: "Exercise",
-        completed: true,
+        completed: false,
       },
     ],
   };
@@ -40,8 +44,15 @@ class App extends Component {
     });
   };
 
+  addTodoHandler = (id) => {
+    console.log(id);
+    const newItem = this.state.todos.concat(id);
+    this.setState({ todos: newItem });
+  };
+
   render() {
-    const todos = this.state.todos.map((todo) => (
+    const filterTodos = this.state.todos.filter((todo) => todo.id > 0);
+    const todos = filterTodos.map((todo) => (
       <Todo
         key={todo.id}
         id={todo.id}
@@ -51,10 +62,17 @@ class App extends Component {
       />
     ));
 
+    const newId = this.state.todos[this.state.todos.length - 1].id;
+
+    const addTodo = (
+      <AddTodo newId={newId} addTodoHandler={this.addTodoHandler} />
+    );
+
     return (
       <div className="App">
         <h1>Things To Do</h1>
-        <div>{todos}</div>
+        <div style={{ marginTop: "50px" }}>{todos}</div>
+        <div>{addTodo}</div>
       </div>
     );
   }
