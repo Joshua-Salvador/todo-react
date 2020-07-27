@@ -10,31 +10,6 @@ class App extends Component {
       {
         id: 0,
       },
-      // {
-      //   id: 1,
-      //   title: "Sleep",
-      //   completed: false,
-      // },
-      // {
-      //   id: 2,
-      //   title: "Work",
-      //   completed: false,
-      // },
-      // {
-      //   id: 3,
-      //   title: "Study",
-      //   completed: false,
-      // },
-      // {
-      //   id: 4,
-      //   title: "Play",
-      //   completed: false,
-      // },
-      // {
-      //   id: 5,
-      //   title: "Exercise",
-      //   completed: false,
-      // },
     ],
   };
 
